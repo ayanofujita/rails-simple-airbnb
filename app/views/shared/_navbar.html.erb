@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between bg-light p-3 mb-4">
+      <%= link_to flats_path, class: "text-reset text-decoration-none" do%>
+        <h4 class="m-0">Simple Airbnb</h4>
+      <% end %>
+      <div>
+        <form action="/flats">
+          <div class="input-group">
+            <input class="form-control" name="query" type="search" placeholder="Search" aria-label="Search" value="">
+            <div class="input-group-append">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <%= link_to new_flat_path do %>
+        <button class="btn btn-secondary">Add Flat</button>
+      <% end %>
+    </div>

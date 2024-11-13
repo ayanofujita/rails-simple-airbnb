@@ -1,0 +1,57 @@
+<div class="map" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+<div class="container d-flex" style="margin-top: -75px;">
+  <div class="info flex-grow-1">
+    <div class="flat-show-card">
+      <div class="card-body">
+        <h2 class="card-title"><%= @flat.name %></h2>
+        <p class="card-text"><%= @flat.address %></p>
+      </div>
+    </div>
+
+    <div class="flat-show-card">
+      <div class="card-body">
+        <h4 class="card-title">A bit more about this flat...</h4>
+        <p class="card-text"><%= @flat.description %></p>
+        <%= image_tag "https://picsum.photos/700/400", alt: "text" %>
+      </div>
+    </div>
+
+  </div>
+
+  <div>
+    <div class="flat-show-card ms-3 p-3" style="min-width: 15rem; width: 18rem; height: fit-content;">
+      <h6 class="card.title">Book this place!</h6>
+      <form action="">
+        <div class="col-auto">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">From</div>
+            </div>
+            <input type="date" class="form-control" id="inlineFormInputGroup" placeholder="">
+          </div>
+        </div>
+        <div class="col-auto">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">To</div>
+            </div>
+            <input type="date" class="form-control" id="inlineFormInputGroup" placeholder="">
+          </div>
+        </div>
+        <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+      </form>
+    </div>
+
+    <div class="flat-show-card ms-3">
+      <div class="card-body">
+        <h4 class="card-title">Details</h4>
+        <p class="card-text mb-0">
+          <i class="fa-solid fa-yen-sign"></i> Price per night: <%= @flat.price_per_night %> (JPY)
+        </p>
+        <p class="card-text">
+          <i class="fa-solid fa-users-line"></i> Number of guests: <%= @flat.number_of_guests %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

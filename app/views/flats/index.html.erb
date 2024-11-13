@@ -1,0 +1,23 @@
+<div class="container">
+  <% @flats = params[:query] ? Flat.where("name LIKE '%#{params[:query]}%'") : @flats %>
+  <h1>All our Flats (<%= @flats.count %>)</h1>
+
+  <div class="d-flex flex-wrap justify-content-between">
+    <% @flats.each do |flat| %>
+      <div class="card m-2" style="width: 22rem;">
+        <img class="card-img-top" src="https://picsum.photos/350/220" alt="Card image cap">
+        <div class="card-body bg-light">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <p><i class="fa-solid fa-users-line"></i> <%= flat.number_of_guests %>
+          <i class="fa-solid fa-yen-sign"></i> <%= flat.price_per_night %></p>
+        </div>
+        <div class="bg-white p-3 d-flex justify-content-between">
+            <%= link_to "More info", flat_path(flat) %>
+            <%= link_to "Edit", edit_flat_path(flat) %>
+            <%= link_to "Remove", flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
